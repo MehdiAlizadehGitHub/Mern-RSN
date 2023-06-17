@@ -4,5 +4,8 @@
       "source": "/(.*)",
       "destination": "/api"
     }
-  ]
+  ],
+  "functions": {
+    "directory": "api"
+  }
 }
