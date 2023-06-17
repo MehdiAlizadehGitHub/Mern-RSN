@@ -1,3 +1,3 @@
-import app from "./server.js"
+import sever from "./"
 
-export default app;
+export default server;
