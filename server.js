@@ -13,7 +13,7 @@ const app = express();
 app.use(express.static('public'))
 
 const corsOptions = {
-  origin: [process.env.CLIENT_URL, 'https://mern-rsn.onrender.com'],
+  origin: [process.env.CLIENT_URL,'https://mern-rsn.vercel.app' ,'https://mern-rsn.onrender.com'],
   credentials: true,
   'allowedHeaders': ['sessionId', 'Content-Type'],
   'exposedHeaders': ['sessionId'],
