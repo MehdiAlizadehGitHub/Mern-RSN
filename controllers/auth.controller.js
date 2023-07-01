@@ -43,7 +43,7 @@ module.exports.signIn = async (req, res) => {
 }
 
 module.exports.logout = (req, res) => {
-  res.cookie('jwt', '', { maxAge: 1 });
+  res.clearCookie('jwt'); // Clears the 'jwt' cookie
   res.setHeader('Cache-Control', 'no-store'); // Sets Cache-Control header to prevent caching
   res.redirect('/');
 }
