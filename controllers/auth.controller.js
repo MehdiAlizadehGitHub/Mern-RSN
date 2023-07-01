@@ -29,7 +29,7 @@ module.exports.signIn = async (req, res) => {
   try {
     const user = await UserModel.login(email, password);
     const token = createToken(user._id);
-    res.cookie('jwt', token, { httpOnly: true, domain:'.onrender.com', expires: 9000000000000, sameSite: 'None'  });
+    res.cookie('jwt', token, { httpOnly: true, domain:'.onrender.com', expires: 5* 24 * 60 * 60 * 1000, sameSite: 'None'  });
     res.status(200).json({ user: user._id })
   } catch (err) {
     const errors = signInErrors(err);
