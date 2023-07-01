@@ -33,7 +33,7 @@ module.exports.signIn = async (req, res) => {
     res.cookie('jwt', token, {
       httpOnly: true, secure: true,
       sameSite: 'none',
-      domain: '.netlify.app', maxAge
+      domain: '.netlify.app' & '', maxAge
     });
     res.status(200).json({ user: user._id })
   } catch (err) {
