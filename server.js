@@ -15,8 +15,8 @@ app.use(express.static('public'))
 const corsOptions = {
   origin: [process.env.CLIENT_URL, 'https://mern-rsn.vercel.app', 'https://mern-rsn.onrender.com', 'https://main--stately-seahorse-22ce78.netlify.app'],
   credentials: true,
-  'allowedHeaders': '*',
-  'exposedHeaders': '*',
+  'allowedHeaders': ['sessionId', 'Content-Type'],
+  'exposedHeaders': ['sessionId'],
   'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
   'preflightContinue': false
 }
