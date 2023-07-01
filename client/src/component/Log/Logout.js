@@ -16,7 +16,10 @@ const Logout = () => {
       withCredentials: true,
       
     })
-      .then(() => removeCookie("jwt"))
+    .then(() => {
+      removeCookie("jwt");
+      window.location.reload();
+    })
       .catch((err) => console.log(err));
     
     window.location = "/";
