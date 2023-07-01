@@ -29,7 +29,7 @@ module.exports.signIn = async (req, res) => {
   try {
     const user = await UserModel.login(email, password);
     const token = createToken(user._id);
-    res.status(200).cookie('jwt', token, { httpOnly: true, domain: process.env.NODE_ENV === 'development' ? '.localhost' : '.mern-rsn-api.onrender.com', maxAge });
+    res.status(200).cookie('jwt', token, { httpOnly: true, domain: process.env.NODE_ENV === 'development' ? '.localhost' : '.mern-rsn.onrender.com', maxAge });
     res.status(200).json({ user: user._id })
   } catch (err) {
     const errors = signInErrors(err);
