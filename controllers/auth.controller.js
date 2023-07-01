@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const { signUpErrors, signInErrors } = require('../utils/errors.utils');
 
 const expirationDate = new Date(Date.now() + (3 * 24 * 60 * 60 * 1000)); // Calculate the expiration date 3 days in the future
-const maxAge = expirationDate.getTime(); // Calculate the difference in milliseconds
+const maxAge = expirationDate.getTime() - Date.now(); // Calculate the difference in milliseconds
 
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.TOKEN_SECRET, {
@@ -30,7 +30,7 @@ module.exports.signIn = async (req, res) => {
   try {
     const user = await UserModel.login(email, password);
     const token = createToken(user._id);
-    res.cookie('jwt', token, { httpOnly: true, domain: process.env.NODE_ENV === 'development'? 'localhost' : '.onrender.com', maxAge });
+    res.cookie('jwt', token, { httpOnly: false, domain:'', maxAge });
     res.status(200).json({ user: user._id })
   } catch (err) {
     const errors = signInErrors(err);
