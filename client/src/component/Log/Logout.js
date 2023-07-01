@@ -14,7 +14,7 @@ const Logout = () => {
       method: "get",
       url: `${process.env.REACT_APP_API_URL}api/user/logout`,
       withCredentials: true,
-      headers: { 'Cache-Control': 'no-cache' },
+      
     })
       .then(() => removeCookie("jwt"))
       .catch((err) => console.log(err));
