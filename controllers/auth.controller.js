@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const { signUpErrors, signInErrors } = require('../utils/errors.utils');
 
 const expirationDate = new Date(Date.now() + (3 * 24 * 60 * 60 * 1000)); // Calculate the expiration date 3 days in the future
-const maxAge = expirationDate.getTime() - Date.now(); // Calculate the difference in milliseconds
+const maxAge = expirationDate.getTime(); // Calculate the difference in milliseconds
 
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.TOKEN_SECRET, {
