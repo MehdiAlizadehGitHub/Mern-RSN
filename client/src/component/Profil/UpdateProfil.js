@@ -40,7 +40,7 @@ const UpdateProfil = () => {
               <>
                 <p onClick={() => setUpdateForm(!updateForm)}>{userData.bio}</p>
                 <button onClick={() => setUpdateForm(!updateForm)}>
-                  Modifier bio
+                  Update bio
                 </button>
               </>
             )}
@@ -55,7 +55,7 @@ const UpdateProfil = () => {
               </>
             )}
           </div>
-          <h4>Membre depuis le : {dateParser(userData.createdAt)}</h4>
+          <h4>Member since: {dateParser(userData.createdAt)}</h4>
           <h5 onClick={() => setFollowingPopup(true)}>
             Abonnements : {userData.following ? userData.following.length : ""}
           </h5>

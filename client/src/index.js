@@ -16,7 +16,7 @@ import { getPosts } from './actions/post.actions';
 
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(thunk, logger))
+  composeWithDevTools(applyMiddleware(thunk/* , logger */))
 );
 
 store.dispatch(getUsers());
