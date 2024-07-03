@@ -7,7 +7,7 @@ nav {
   z-index: 10;
   top: 0;
 
-  @media screen and (max-width: 1251px) {
+  @media screen and(max-width: 1251px) {
     padding: 0 20px;
   }
 
@@ -31,14 +31,14 @@ nav {
     justify-content: space-between;
     height: 45px;
     align-items: center;
-    @media screen and (max-width: 885px) {
+    @media screen and(max-width: 885px) {
       margin-right: 10%;
 
     }
     .logo {
       display: flex;
       align-items: center;
-
+      
       h3 {
         transform: translate(15px, 2px);
         font-size: 1.5rem;
@@ -50,7 +50,7 @@ nav {
         width: 70px;
       }
     }
-
+    
     ul {
       display: flex;
       align-items: center;
@@ -58,21 +58,21 @@ nav {
       width: 35%;
       justify-content: space-between;
       font-size: 1.2rem;
-
+      
       .welcome {
         transform: translateY(2px);
 
-        @media screen and (max-width: 590px) {
+        @media screen and(max-width: 590px) {
           display: none;
         }
-
+        
         h5 {
           font-family: $font-3;
         }
       }
-
+      
       li {
-
+        
         img {
           height: 40px;
           width: 40px;
